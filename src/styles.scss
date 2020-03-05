@@ -1,0 +1,35 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'spinner';
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  overscroll-behavior-y: contain;
+}
+
+.mat-button-toggle-label-content {
+  line-height: 30px !important;
+  padding: 6px !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0px !important;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 5px !important;
+}
+
+a {
+  cursor: pointer !important;
+}
+
+app-input-component, chips-component, app-button-component {
+  width: 100%;
+}

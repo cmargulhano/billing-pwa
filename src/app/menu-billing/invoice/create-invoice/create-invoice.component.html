@@ -1,0 +1,69 @@
+<div class="container">
+  <mat-toolbar class="header-toolbar" color="primary">
+    <div>
+      <h1>{{ 'NAME' | translate}}</h1>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end">
+      <button mat-button class="btn-back" (click)="back()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <div class="menu-component center">
+    <h2>{{'INVOICE.' + (invoice?'EDIT': 'NEW') | translate}}</h2>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card fxFlex="100">
+        <mat-card-content fxLayout="column">
+
+          <form [formGroup]="frm" (submit)="save()">
+            <mat-form-field class="w100">
+              <input matInput type="date" placeholder="{{'INVOICE.COMPETENCY-DATE' | translate }}" [formControl]="competencyDateFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="competencyDateFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <input matInput type="date" placeholder="{{'INVOICE.EXPIRATION-DATE' | translate }}" [formControl]="expirationDateFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="expirationDateFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <input matInput type="date" placeholder="{{'INVOICE.PAYMENT-DATE' | translate }}" [formControl]="paymentDateFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="paymentDateFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <input matInput placeholder="{{'INVOICE.VALUE' | translate }}" [formControl]="valueFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="valueFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+              <mat-label>{{'INVOICE.CUSTOMER' | translate }}</mat-label>
+              <mat-select [formControl]="customerFormControl">
+                <mat-option *ngFor="let customer of customers" [value]="customer.id">
+                  {{customer.fullName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button mat-raised-button type="submit" [disabled]="frm.invalid"
+              color="primary">{{'COMMONS.SAVE' | translate}}</button>
+          </form>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

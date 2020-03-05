@@ -1,0 +1,50 @@
+{
+  "NAME": "Billing",
+  "TITLE": "Billing",
+  "COMMONS": {
+    "SAVE": "Salvar",
+    "REQUIRED": "obrigatório",
+    "MSG": {
+      "ERROR_GENERIC": "Erro na operação. Favor tentar novamente."
+    }
+  },
+  "SIDEBAR": {
+    "HOME": "Início",
+    "MENU": "Faturas"
+  },
+  "PWA": {
+    "INSTALL": "Instalar",
+    "MSG": {
+      "RELOAD": "Há uma nova versão do App. Deseja atualizar?",
+      "INSTALL": "Deseja instalar o App Billing na sua tela incial?"
+    }
+  },
+  "MENU-MENU": {
+    "CUSTOMER": "Clientes",
+    "BILLING": "Faturas"
+  },
+  "CUSTOMER": {
+    "ID": "Id",
+    "TITLE": "Clientes",
+    "NEW": "Novo cliente",
+    "EDIT": "Editar cliente",
+    "NAME": "Nome",
+    "BIRTHDATE": "Data nascimento",
+    "GENDER": "Gender",
+    "GENDER.MALE": "Homem",
+    "GENDER.FEMALE": "Mulher",
+    "PHONE": "Telefone",
+    "MOBILE": "Celular"
+  },
+  "INVOICE": {
+    "ID": "Id",
+    "TITLE": "Faturas",
+    "NEW": "Novo fatura",
+    "EDIT": "Editar fatura",
+    "COMPETENCY-DATE": "Data competência",
+    "EXPIRATION-DATE": "Vencimento",
+    "PAYMENT-DATE": "Data pagamento",
+    "VALUE": "Valor",
+    "CUSTOMER": "Cliente"
+  }
+}

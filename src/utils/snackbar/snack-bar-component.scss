@@ -1,0 +1,5 @@
+@import 'variables';
+
+.color {
+  color: map-get($custom-colors, snack-text);
+}

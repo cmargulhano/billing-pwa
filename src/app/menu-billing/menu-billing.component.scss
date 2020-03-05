@@ -1,0 +1,133 @@
+@import 'variables';
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* On screens that are 959px or less */
+@media screen and (max-width: 959px) {
+  mat-sidenav {
+    width: 60px !important;
+    .text-default {
+      display: none !important;
+    }
+    button {
+      width: 55px !important;
+    }
+  }
+  .header-toolbar {
+    left: 60px !important;
+    width: calc(100% - 60px) !important;
+  }
+  .sidenav-expand {
+    width: auto !important;
+    .sidenav-expand-item {
+      mat-icon {
+        position: absolute;
+        left: 0 !important;
+        top: 5px !important;
+      }
+    }
+    .text-default {
+      display: block !important;
+      position: relative !important;
+      margin-left: 40px !important;
+      text-align: left !important;
+    }
+    button {
+      padding: 0px 0px 5px 0px !important;
+      min-width: 0 !important;
+      border-radius: 0 50px 50px 0 !important;
+      width: auto !important;
+      margin: 5px 0px 0px 0px !important;
+    }
+    .lower-left {
+      position: fixed !important;
+      bottom: 0 !important;
+      mat-icon {
+        position: relative !important;
+        margin-left: 200px !important;
+      }
+    }
+  }
+}
+
+.header-toolbar {
+  position: fixed;
+  z-index: 20;
+  left: 245px;
+  width: calc(100% - 245px);
+}
+
+mat-sidenav {
+  color: transparent;
+  button {
+    padding: 0px 0px 5px 0px;
+    min-width: 0;
+    border-radius: 0 50px 50px 0;
+    width: auto;
+    margin: 5px 0px 0px 0px;
+  }
+}
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 10px 10px 0px;
+  mat-icon {
+    color: map-get($custom-colors, sidenav-deselected);
+    font-size: 32px;
+    padding: 0px 8px 8px 0px;
+  }
+  span {
+    color: map-get($custom-colors, sidenav-deselected);
+    padding-right: 50px;
+    display: inline-flex;
+    width: 150px;
+  }
+  .btn-selected {
+    background: map-get($custom-colors, sidenav-selected);
+    mat-icon {
+      color: map-get($custom-colors, sidenav-text-selected);
+    }
+  }
+  .text-selected {
+    color: map-get($custom-colors, sidenav-text-selected) !important;
+  }
+}
+
+.rigth-top {
+  position: relative;
+}
+
+.rigth-top button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn-back {
+  padding: 0;
+  min-width: 0;
+  top: -5px;
+  z-index: 30;
+  mat-icon {
+    color: white;
+    font-size: 28px;
+    padding: 0;
+  }
+}
+
+.menu-component {
+  margin-top: 65px;
+  height: 100%;
+}
+
+.lower-left {
+  position: fixed;
+  bottom: 0;
+}

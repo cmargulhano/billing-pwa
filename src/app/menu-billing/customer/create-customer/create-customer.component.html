@@ -1,0 +1,70 @@
+<div class="container">
+  <mat-toolbar class="header-toolbar" color="primary">
+    <div>
+      <h1>{{ 'NAME' | translate}}</h1>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end">
+      <button mat-button class="btn-back" (click)="back()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <div class="menu-component center">
+    <h2>{{'CUSTOMER.' + (customer?'EDIT': 'NEW') | translate}}</h2>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card fxFlex="100">
+        <mat-card-content fxLayout="column">
+
+          <form [formGroup]="frm" (submit)="save()">
+            <mat-form-field class="w100">
+              <input matInput placeholder="{{'CUSTOMER.NAME' | translate }}" [formControl]="nameFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="nameFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <input matInput type="date" placeholder="{{'CUSTOMER.BIRTHDATE' | translate }}" [formControl]="birthDateFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="birthDateFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <mat-label>{{'CUSTOMER.GENDER' | translate }}</mat-label>
+              <mat-select [formControl]="genderFormControl" [errorStateMatcher]="matcher">
+                <mat-option value="MALE">{{'CUSTOMER.GENDER.MALE' | translate }}</mat-option>
+                <mat-option value="FEMALE">{{'CUSTOMER.GENDER.FEMALE' | translate }}</mat-option>
+              </mat-select>
+
+              <mat-error *ngIf="genderFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <input matInput placeholder="{{'CUSTOMER.PHONE' | translate }}" [formControl]="phoneNumberFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w100">
+              <input matInput placeholder="{{'CUSTOMER.MOBILE' | translate }}" [formControl]="mobileNumberFormControl"
+                [errorStateMatcher]="matcher">
+              <mat-error *ngIf="mobileNumberFormControl.hasError('required')">
+                <strong>{{'COMMONS.REQUIRED' | translate}}</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button type="submit" [disabled]="frm.invalid"
+              color="primary">{{'COMMONS.SAVE' | translate}}</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

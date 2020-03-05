@@ -1,0 +1,30 @@
+span {
+  margin-left: 20px;
+}
+
+mat-icon {
+  font-size: 32px;
+  top: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.mat-icon-error {
+  color: red;
+}
+
+.mat-icon-warning {
+  color: yellow;
+}
+
+.mat-icon-question {
+  color: lightskyblue;
+}
+
+.mat-icon-check {
+  color: lightgreen;
+}
+
+.mat-dialog-actions {
+  margin-bottom: 0px;
+}

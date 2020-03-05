@@ -1,0 +1,8 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon> <span class="nav-caption">{{'SIDEBAR.HOME' | translate}}</span>
+  </a>
+  <a mat-list-item (click)="open('billing')">
+    <mat-icon>menu_book</mat-icon> <span class="nav-caption">{{'SIDEBAR.MENU' | translate}}</span>
+  </a>
+</mat-nav-list>

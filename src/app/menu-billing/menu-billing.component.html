@@ -1,0 +1,49 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" [class.sidenav-expand]="!collapsed">
+    <ul class="navigation-items">
+      <li [class.sidenav-expand-item]="!collapsed">
+        <button [class.btn-selected]="index == SideNavActions.LIST_CUSTOMER" (click)="select(SideNavActions.LIST_CUSTOMER)" mat-button>
+          <mat-icon>group</mat-icon>
+          <span class="text-default"
+            [class.text-selected]="index == SideNavActions.LIST_CUSTOMER">{{'MENU-MENU.CUSTOMER' | translate}}</span>
+        </button>
+      </li>
+      <li [class.sidenav-expand-item]="!collapsed">
+        <button [class.btn-selected]="index == SideNavActions.LIST_INVOICE" (click)="select(SideNavActions.LIST_INVOICE)" mat-button>
+          <mat-icon>account_balance</mat-icon>
+          <span class="text-default"
+            [class.text-selected]="index == SideNavActions.LIST_INVOICE">{{'MENU-MENU.BILLING' | translate}}</span>
+        </button>
+      </li>
+      <li fxHide.md fxHide.lg class="lower-left" (click)="toogle()">
+        <button mat-button>
+          <mat-icon *ngIf="collapsed">chevron_right</mat-icon>
+          <mat-icon *ngIf="!collapsed" class="chevron-left">chevron_left</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="header-toolbar" color="primary">
+      <div>
+        <h1>{{ 'NAME' | translate}}</h1>
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="end">
+        <button mat-button class="btn-back" (click)="back()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+
+    <div class="menu-component">
+
+      <customer-component *ngIf="index == SideNavActions.LIST_CUSTOMER"></customer-component>
+
+      <invoice-component *ngIf="index == SideNavActions.LIST_INVOICE"></invoice-component>
+
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

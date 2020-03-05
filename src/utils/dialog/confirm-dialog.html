@@ -1,0 +1,22 @@
+<div mat-dialog-content>
+  <div fxLayout="row" fxLayoutAlign="start">
+    <div *ngIf="error">
+      <mat-icon class="mat-icon-error">error</mat-icon><span>{{title}}</span>
+    </div>
+    <div *ngIf="warning">
+      <mat-icon class="mat-icon-warning">warning</mat-icon><span>{{title}}</span>
+    </div>
+    <div *ngIf="question">
+      <mat-icon class="mat-icon-question">question_answer</mat-icon><span>{{title}}</span>
+    </div>
+    <div *ngIf="check">
+      <mat-icon class="mat-icon-check">check</mat-icon><span>{{title}}</span>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
+  <button *ngIf="!onlyOk && focus == 'yes'" mat-button mat-raised-button (click)="onNoClick()">{{'COMMONS.NO' | translate}}</button>
+  <button *ngIf="!onlyOk && focus == 'no'" cdkFocusInitial mat-button mat-raised-button (click)="onNoClick()">{{'COMMONS.NO' | translate}}</button>
+  <button mat-button mat-raised-button [mat-dialog-close]="true"
+    cdkFocusInitial>{{onlyOk? ('COMMONS.OK' | translate): ('COMMONS.YES' | translate)}}</button>
+</div>

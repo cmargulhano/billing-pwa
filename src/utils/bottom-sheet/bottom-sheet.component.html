@@ -1,0 +1,9 @@
+<mat-grid-list cols="2" rowHeight="4.5em">
+  <mat-grid-tile colspan="2"><span>{{text}}</span></mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-raised-button (click)="cancel($event)">{{labelButtonCancel}}</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button cdkFocusInitial mat-raised-button color="primary" (click)="confirm($event)">{{labelButtonConfirm}}</button>
+  </mat-grid-tile>
+</mat-grid-list>

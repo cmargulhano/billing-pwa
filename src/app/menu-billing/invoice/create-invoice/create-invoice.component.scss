@@ -1,0 +1,81 @@
+@import 'variables';
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* On screens that are 959px or less */
+@media screen and (max-width: 959px) {
+  mat-sidenav {
+    width: 60px !important;
+    .text-default {
+      display: none !important;
+    }
+    button {
+      width: 55px !important;
+    }
+  }
+  .header-toolbar {
+    width: 100% !important;
+  }
+}
+
+.header-toolbar {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+}
+
+.btn-back {
+  padding: 0;
+  min-width: 0;
+  top: -5px;
+  mat-icon {
+    color: white;
+    font-size: 28px;
+    padding: 0;
+  }
+}
+
+.menu-component {
+  margin-top: 65px;
+  height: 100%;
+  mat-icon {
+    color: map-get($custom-colors, label);
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+h2,
+h4 {
+  margin-block-start: 5px !important;
+  margin-block-end: 5px !important;
+}
+
+.w100,
+mat-form-field,
+form {
+  width: 100% !important;
+  div {
+    width: 100% !important;
+    button {
+      margin-top: 20px;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  strong {
+    text-transform: lowercase;
+  }
+}
